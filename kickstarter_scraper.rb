@@ -24,8 +24,5 @@ Four young composers join forces with an indie orchestra to present this musical
 # image link: project.css("div.project-thumbnail a img").attribute("src").value
 # description: project.css("p.bbcard_blurb").text
 # location: project.css("span.location-name").text
-percent_funded: project.css("li.first.funded strong").text.gsub("%", "").to_i
-<li class="first funded">
-<strong>77%</strong>
-funded
-</li>
+# percent_funded: project.css("li.first.funded strong").text.gsub("%", "").to_i
+
