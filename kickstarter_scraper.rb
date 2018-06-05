@@ -2,15 +2,24 @@
 require 'nokogiri'
 require 'pry'
 
-html = File.read('fixtures/kickstarter.html')
 
-kickstarter = Nokogiri::HTML(html)
+
+
 
 def create_project_hash
-  # write your code here
+  html = File.read('fixtures/kickstarter.html')
+  kickstarter = Nokogiri::HTML(html)
+  kickstarter.css("li.project.grid_4")
+
+  projects = {}
+
+  kickstarter.css("li.project.grid_4").each do |project|
+    projects[project] = []
+  end
+  
 
 end
-kickstarter.css("li.project.grid_4").first
+
 
 # create_project_hash
 binding.pry
@@ -25,4 +34,3 @@ Four young composers join forces with an indie orchestra to present this musical
 # description: project.css("p.bbcard_blurb").text
 # location: project.css("span.location-name").text
 # percent_funded: project.css("li.first.funded strong").text.gsub("%", "").to_i
-
